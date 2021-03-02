@@ -58,8 +58,9 @@ const app = Vue.createApp({
                 this.wrongAnswer++             
         },
         nextQuestion() {
-            this.index++
             this.selectedAnswer = ''
+            this.index++
+
         },
         showResults() {
             this.index++
@@ -68,7 +69,7 @@ const app = Vue.createApp({
             this.index = 0
             this.selectedAnswer = ''
             this.correctAnswer = 0
-            this.wrongAnswer = 0
+            this.wrongAnswer = 0 
         }
     }
 })
