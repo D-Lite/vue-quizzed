@@ -1,0 +1,42 @@
+{
+    "questions": [
+        {
+            "question": "What is Unilorin tag name?",
+            "answers": {
+                "a": "Better than far",
+                "b": "Better by stress",
+                "c": "First and bes",
+                "d": "Pride of Nigeria"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "Which country are you?",
+            "answers": {
+                "a": "Nigeria",
+                "b": "Ghana",
+                "c": "Canada",
+                "d": "Germany"
+            },
+            "correctAnswer": "a"
+        },
+        {
+            "question": "The club that won 2020 champions league is?",
+            "answers": {
+                "a": "Liverpool",
+                "b": "Manchester United",
+                "c": "Arsenal",
+                "d": "Bayern Munich"
+            },
+            "correctAnswer": "d"
+        },
+        {
+            "question": "Albert Einstein, male or female",
+            "answers": {
+                "a": "Male",
+                "b": "Female"
+            },
+            "correctAnswer": "a"
+        }
+    ]
+}

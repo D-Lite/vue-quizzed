@@ -1,3 +1,19 @@
+const checkbox = document.getElementById('checkbox');
+const html = document.querySelector('html');
+
+const toggleDark = function (){
+    checkbox.checked
+        ? html.classList.add("dark")
+        : html.classList.remove("dark");
+};
+
+toggleDark()
+
+checkbox.addEventListener('click', toggleDark)
+ 
+
+
+
 const app = Vue.createApp({
     data() {
         return {

@@ -1,33 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SiquIZ</title>
         <link rel="stylesheet" href="dist/styles.css" />
+        <link rel="stylesheet" href="dist/all.css" />
         <script src="https://unpkg.com/vue@3.0.2"></script>
+        <script src="dist/all.js"></script>        
     </head>
     <body>
-        <div class="antialiased text-gray-700 bg-gray-300">
+        <div class="antialiased text-gray-700 bg-gray-300 dark:bg-gray-800">
+            <div class="colormode">
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="label">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <div class="ball"></div>
+                </label>
+            </div>
             <div class="flex w-full h-screen justify-center items-center" id="app">
                 <div class="w-full max-w-xl">
-                    <h1 class="font-bold text-5xl text-center text-blue-900">
+                    <h1 class="font-bold text-5xl text-center text-blue-900 dark:text-gray-100">
                         SIquIz
                     </h1>
 
-                    <div class="bg-white p-12 rounded-lg shadow-lg w-full mt-8">
+                    <div class="bg-white p-12 rounded-lg shadow-lg w-full mt-8 dark:bg-gray-800 dark:border-yellow-600 dark:rounded-lg" >
                         <div v-if="index < count">
-                            <p class="text-2xl font-bold"> 
+                            <p class="text-2xl font-bold dark:text-white"> 
                                 {{ questions[index]['question'] }} 
                             </p>
     
                             <label 
                                 :for="key"
-                                class="block mt-4 border border-gray-400 rounded-lg py-2 px-6 text-lg" 
+                                class="block mt-4 border border-gray-400 rounded-lg py-2 px-6 text-lg dark:text-white" 
                                 v-for="answer,key in questions[index]['answers']"
-                                :class="{'hover:bg-gray-200 cursor-pointer' : selectedAnswer  == ''},
-                                {'bg-red-200' : selectedAnswer == key},
-                                {'bg-green-500 text-white' : key == questions[index]['correctAnswer'] && selectedAnswer != ''}" 
+                                :class="{'hover:bg-gray-200 cursor-pointer dark:hover:bg-gray-500' : selectedAnswer  == ''},
+                                {'bg-red-200 dark:bg-red-700' : selectedAnswer == key},
+                                {'bg-green-500 text-white dark:bg-green-700' : key == questions[index]['correctAnswer'] && selectedAnswer != ''}" 
                             >
                                 <input 
                                 type="radio" 
@@ -87,4 +97,57 @@
 
         <script src="script.js"></script>
     </body>
+
+<style>
+    .colormode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    margin: 0;
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+    /* background-color: red; */
+}
+
+.label {
+    height: 26px;
+    width: 50px;
+    background-color: #333;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+}
+
+.ball {
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear ;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(24px);
+}
+ 
+</style>
+
 </html>
