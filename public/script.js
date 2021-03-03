@@ -26,7 +26,7 @@ const app = Vue.createApp({
                 {
                     question: "What is Unilorin tag name?",
                     answers: {
-                        a: "Better than far",
+                        a: "Better by far",
                         b: "Better by stress",
                         c: "First and bes",
                         d: "Pride of Nigeria"
